@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block titulo_pagina %}Cadastro de Profissionais{% endblock %}
+{% block conteudo %}
+
+    <form action="." method="post">
+        {% csrf_token %}
+         <div class="col-md-7">
+             {{ form.name.label_tag }}
+             {{ form.name }}
+         </div>
+        <div class="col-md-5">
+             {{ form.professional_as.label_tag }}
+             {{ form.professional_as }}
+        </div>
+        <div class="col-md-2">
+             {{ form.cpf.label_tag }}
+             {{ form.cpf }}
+        </div>
+
+        <div class="col-md-2">
+             {{ form.cep.label_tag }}
+             {{ form.cep }}
+        </div>
+
+        <div class="col-md-2">
+             {{ form.salary.label_tag }} {{ form.salary.help_text }}
+             {{ form.salary }}
+         </div>
+
+        <div class="col-md-2">
+             {{ form.register.label_tag }}{{ form.register.help_text }}
+             {{ form.register }}
+        </div>
+
+        <div class="col-md-2">
+             {{ form.rg.label_tag }}
+             {{ form.rg }}
+        </div>
+
+        <div class="col-md-2">
+             {{ form.sex.label_tag }}
+             {{ form.sex }}
+        </div>
+        <div class="col-md-3">
+             {{ form.email.label_tag }}
+             {{ form.email }}
+        </div>
+
+        <div class="col-md-3">
+             {{ form.birth_day.label_tag }}
+             {{ form.birth_day }}
+        </div>
+        <div class="col-md-3">
+             {{ form.date_register_in_company.label_tag }}
+             {{ form.date_register_in_company }}
+        </div>
+
+        <div class="col-md-2">
+             {{ form.phone.label_tag }}
+             {{ form.phone }}
+        </div>
+        <div class="col-md-2">
+             {{ form.watsapp.label_tag }}
+             {{ form.watsapp }}
+        </div>
+
+        <div class="col-md-2">
+            <br>
+             {{ form.active.label_tag }}
+             {{ form.active }}
+        </div>
+
+
+        <div class="col-md-12">
+            <br>
+            <button class="btn btn-success" type="submit">ENVIAR</button>
+            <button class="btn btn-primary" type="reset">CANCELAR</button>
+        </div>
+    </form>
+{% endblock %}

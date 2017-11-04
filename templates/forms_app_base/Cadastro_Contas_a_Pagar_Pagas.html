@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block titulo_pagina %}Cadastro de Contas a Pagar{% endblock %}
+{% block conteudo %}
+    <form action="." method="post">
+    {% csrf_token %}
+        <div class="col-md-7">
+            {{ form.conta.label_tag }}
+            {{ form.conta }}
+        </div>
+        <div class="col-md-3">
+            {{ form.date_payment.label_tag }}
+            {{ form.date_payment }}
+        </div>
+        <div class="col-md-3">
+            {{ form.responsible_for_payment.label_tag }}
+            {{ form.responsible_for_payment }}
+        </div>
+        <div class="col-md-7">
+            {{ form.Image_of_receipt.label_tag }}
+            {{ form.Image_of_receipt }}
+        </div>
+    <div class="col-md-12">
+        <br>
+         <button class="btn btn-success" type="submit">ENVIAR</button>
+         <button class="btn btn-primary" type="reset">CANCELAR</button>
+        </div>
+    </form>
+{% endblock %}

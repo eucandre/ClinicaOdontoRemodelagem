@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block titulo_pagina %}Cadastro de Fornecedor{% endblock %}
+{% block conteudo %}
+    <form action="" method="post">
+    {% csrf_token %}
+       <div class="col-md-7">
+           {{ form.name.label_tag }}
+           {{ form.name }}
+       </div>
+        <div class="col-md-5">
+           {{ form.cnpj.label_tag }}
+           {{ form.cnpj }}
+       </div>
+        <div class="col-md-7">
+           {{ form.fantasy_name.label_tag }}
+           {{ form.fantasy_name }}
+       </div>
+        <div class="col-md-5">
+           {{ form.state_register.label_tag }}
+           {{ form.state_register }}
+       </div>
+        <div class="col-md-5">
+           {{ form.mak_to_provides.label_tag }}
+           {{ form.mak_to_provides }}
+       </div>
+        <div class="col-md-12">
+         <br>
+         <button class="btn btn-success" type="submit">ENVIAR</button>
+         <button class="btn btn-primary" type="reset">CANCELAR</button>
+        </div>
+    </form>
+{% endblock %}
