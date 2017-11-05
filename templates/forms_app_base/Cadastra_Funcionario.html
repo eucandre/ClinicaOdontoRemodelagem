@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block titulo_pagina %}Cadastro de Funcionários{% endblock %}
 {% block conteudo %}
-    <form action="." method="post">
+    <form action="" method="post">
         {% csrf_token %}
+         <div style="color: red;"> {{ form.errors }}</div>
         <div class="col-md-7">
             {{ form.name.label_tag }}
             {{ form.name }}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Unidente</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -23,30 +23,12 @@
       .row.content {height: auto;} 
     }
   </style>
-  <script type="text/javascript">
-  jQuery(function ($) {
-    $('.panel-heading span.clickable').on("click", function (e) {
-        if ($(this).hasClass('panel-collapsed')) {
-          // expand the panel
-          $(this).parents('.panel').find('.panel-body').slideDown();
-          $(this).removeClass('panel-collapsed');
-          $(this).find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
-        }
-        else {
-          // collapse the panel
-          $(this).parents('.panel').find('.panel-body').slideUp();
-          $(this).addClass('panel-collapsed');
-          $(this).find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-        }
-    });
-});
-</script>
 </head>
 <body>
-<nav class="navbar navbar-inverse ">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Gerenciador da Unidente</a>
+      <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
     
     <form class="navbar-form navbar-left">
@@ -65,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">Logo</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -81,7 +63,7 @@
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
-      <h2>Menu</h2>
+      <h2>Logo</h2>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="#section1">Dashboard</a></li>
         <li><a href="#section2">Age</a></li>
@@ -90,20 +72,76 @@
       </ul><br>
     </div>
     <br>
-    <h2 class="col-md-2">{%block titulo_pagina%}{%endblock%}</h2>
+    
     <div class="col-sm-9">
-    {% block conteudo %}
       <div class="well">
-        
+        <h4>Dashboard</h4>
+        <p>Some text..</p>
       </div>
-     {% endblock %}
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Users</h4>
+            <p>1 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Sessions</h4>
+            <p>10 Million</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Bounce</h4>
+            <p>30%</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p> 
+            <p>Text</p> 
+            <p>Text</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <p>Text</p> 
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <p>Text</p> 
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-<style>
-.clickable {
-cursor: pointer;
-}
-</style>
+
 </body>
 </html>

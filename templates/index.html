@@ -2,4 +2,92 @@
 {% block titulo_pagina %}Página Inícial{% endblock %}
 {% block conteudo %}
 
-{% endblock %}
+	<div class="col-sm-9 sidenav">
+	<div class="panel-heading">
+  <span class="pull-right clickable">
+     <span>App Base Quantidade de Registros</span><i class="glyphicon glyphicon-chevron-up" data-toggle="collapse" data-target="#demo"></i>
+  </span>
+  <div class="clearfix"></div>
+</div>
+<div id="demo" class="collapse">
+    <div class="row">
+      <div class="col-sm-3 ">
+        <div class="well">
+          <h4>Funcionários</h4>
+          <p>{{funcionario}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Profissionais</h4>
+          <p>{{profissionais}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Clientes</h4>
+          <p>{{cliente}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Marcas</h4>
+          <p>{{marcas}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Fornecedores</h4>
+          <p>{{fornecedor}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Produtos</h4>
+          <p>{{produto}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <h4>Contas a Pagar</h4>
+          <p>{{contas_a_pagar}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="well">
+          <h4>Contas Pagas</h4>
+          <p>{{contas_pagas}}</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br >
+<hr>
+
+<div class="col-sm-9 sidenav">
+	<div class="panel-heading">
+  <span class="pull-right clickable">
+     <span>Investimentos para Clínica</span><i class="glyphicon glyphicon-chevron-up" data-toggle="collapse" data-target="#demo1"></i>
+  </span>
+  <div class="clearfix"></div>
+</div>
+<div id="demo1" class="collapse">
+    <div class="row">
+      <div class="col-sm-3 ">
+        <div class="well">
+          <h4>Funcionários</h4>
+          <p>R$ {{valor_func}}</p> 
+        </div>
+      </div>
+      <div class="col-sm-3 ">
+        <div class="well">
+          <h4>Profissionais</h4>
+          <p>R$ {{valor_prof}}</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
