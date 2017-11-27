@@ -1,0 +1,23 @@
+{% extends "chartjs2.html" %}
+{% block conteudo %}
+    <form action="." method="post">
+    {% csrf_token %}
+    <div class="col-md-6">
+        {{ form.client.label_tag }}
+        {{ form.client }}
+    </div>
+    <div class="col-md-6">
+        {{ form.day_of_service.label_tag }}
+        {{ form.day_of_service }}
+    </div>
+    <div class="col-md-6">
+        {{ form.hour_to_service.label_tag }}
+        {{ form.hour_to_service }}
+    </div>
+    <div class="col-md-12">
+        <br>
+        <button class="btn btn-success" type="submit">ENVIAR</button>
+        <button class="btn btn-primary" type="reset">CANCELAR</button>
+    </div>
+    </form>
+{% endblock %}

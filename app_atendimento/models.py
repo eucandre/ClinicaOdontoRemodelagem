@@ -82,7 +82,6 @@ class Agenda_Odonto(models.Model):
     class Meta:
         verbose_name_plural= 'Agenda para atendimentos odontológicos'
 
-
 class Agenda_Psico(models.Model):
     """Classe que registra o futuro atendimento para o usuário relacionado a determinado profissional 
     com sua especialidade."""
@@ -106,7 +105,6 @@ class Agenda_Psico(models.Model):
 
     class Meta:
         verbose_name_plural = 'Agenda para atendimentos Psicologicos'
-
 
 class Agenda_Nutri(models.Model):
     """Classe que registra o futuro atendimento para o usuário relacionado a determinado profissional 

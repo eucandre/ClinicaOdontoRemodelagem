@@ -1,93 +1,131 @@
-{% extends 'base.html' %}
+{% extends 'chartjs2.html' %}
 {% block titulo_pagina %}Página Inícial{% endblock %}
 {% block conteudo %}
-
-	<div class="col-sm-9 sidenav">
-	<div class="panel-heading">
-  <span class="pull-right clickable">
-     <span>App Base Quantidade de Registros</span><i class="glyphicon glyphicon-chevron-up" data-toggle="collapse" data-target="#demo"></i>
-  </span>
-  <div class="clearfix"></div>
-</div>
-<div id="demo" class="collapse">
-    <div class="row">
-      <div class="col-sm-3 ">
-        <div class="well">
-          <h4>Funcionários</h4>
-          <p>{{funcionario}}</p> 
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Contas <span style="color: #26B99A">pagas</span> e a <span style="color: #03586A">pagar</span>  <small>Sessções mensais</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <canvas id="canvas_bar"></canvas>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Profissionais</h4>
-          <p>{{profissionais}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Clientes</h4>
-          <p>{{cliente}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Marcas</h4>
-          <p>{{marcas}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Fornecedores</h4>
-          <p>{{fornecedor}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Produtos</h4>
-          <p>{{produto}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="well">
-          <h4>Contas a Pagar</h4>
-          <p>{{contas_a_pagar}}</p> 
-        </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="well">
-          <h4>Contas Pagas</h4>
-          <p>{{contas_pagas}}</p> 
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-<br >
-<hr>
 
-<div class="col-sm-9 sidenav">
-	<div class="panel-heading">
-  <span class="pull-right clickable">
-     <span>Investimentos para Clínica</span><i class="glyphicon glyphicon-chevron-up" data-toggle="collapse" data-target="#demo1"></i>
-  </span>
-  <div class="clearfix"></div>
-</div>
-<div id="demo1" class="collapse">
-    <div class="row">
-      <div class="col-sm-3 ">
-        <div class="well">
-          <h4>Funcionários</h4>
-          <p>R$ {{valor_func}}</p> 
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-clipboard"></i>
         </div>
-      </div>
-      <div class="col-sm-3 ">
-        <div class="well">
-          <h4>Profissionais</h4>
-          <p>R$ {{valor_prof}}</p> 
-        </div>
-      </div>
+        <div class="count">{{ funcionarios }}</div>
+
+        <h3>Funcionários</h3>
+        <p>Trabalhando na clínica.</p>
     </div>
-  </div>
 </div>
+ <div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-empire"></i>
+        </div>
+        <div class="count">{{ profissionais }}</div>
+
+        <h3>Profissionais</h3>
+        <p>Dentistas, Nuntricionistas e Psicólogos.</p>
+    </div>
+</div>
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-dollar"></i>
+        </div>
+        <div class="count">{{ clientes }}</div>
+
+        <h3>Clientes</h3>
+        <p>Entre ativos e inativos cadastrados.</p>
+    </div>
+</div>
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-table"></i>
+        </div>
+        <div class="count">{{ produtos }}</div>
+
+        <h3>Produtos</h3>
+        <p>Comprados para Clínica.</p>
+    </div>
+</div>
+    <div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-magnet"></i>
+        </div>
+        <div class="count">{{ marcas }}</div>
+
+        <h3>Marcas</h3>
+        <p>Marcas dos produtos comprados.</p>
+    </div>
+</div>
+
+<div class="animated flipInY col-lg-3 col-md-3 col-sm-2 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-truck"></i>
+        </div>
+        <div class="count">{{ fornecedores }}</div>
+
+        <h3>Fornecedores</h3>
+        <p>Dos produtos para Clínica.</p>
+    </div>
+</div>
+    <script>
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+        var barChartData = {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outrubro", "Novembro", "Dezembro"],
+            datasets: [
+                {
+                    fillColor: "#26B99A", //rgba(220,220,220,0.5)
+                    strokeColor: "#26B99A", //rgba(220,220,220,0.8)
+                    highlightFill: "#36CAAB", //rgba(220,220,220,0.75)
+                    highlightStroke: "#36CAAB", //rgba(220,220,220,1)
+                    data: [{{ conta_paga_jan }},{{ conta_paga_fev }},{{ conta_paga_mar }},{{ conta_paga_abr }},{{ conta_paga_mai }}
+                    ,{{ conta_paga_jun }},{{ conta_paga_jul }},{{ conta_paga_ago }},{{ conta_paga_set }},{{ conta_paga_out }},
+                        {{ conta_paga_nov }},{{ conta_paga_dez }}]
+            },
+                {
+                    fillColor: "#03586A", //rgba(151,187,205,0.5)
+                    strokeColor: "#03586A", //rgba(151,187,205,0.8)
+                    highlightFill: "#066477", //rgba(151,187,205,0.75)
+                    highlightStroke: "#066477", //rgba(151,187,205,1)
+                    data: [{{ conta_pagar_jan }},{{ conta_pagar_fev }},{{ conta_pagar_mar }},{{ conta_pagar_abr }},{{ conta_pagar_mai }}
+                    ,{{ conta_pagar_jun }},{{ conta_pagar_jul }},{{ conta_pagar_ago }},{{ conta_pagar_set }},{{ conta_pagar_out }},
+                        {{ conta_pagar_nov }},{{ conta_pagar_dez }}]
+            }
+        ]
+        };
+
+        $(document).ready(function () {
+            new Chart($("#canvas_bar").get(0).getContext("2d")).Bar(barChartData, {
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                responsive: true,
+                barDatasetSpacing: 6,
+                barValueSpacing: 5
+            });
+        });
+
+    </script>
 
 {%endblock%}
