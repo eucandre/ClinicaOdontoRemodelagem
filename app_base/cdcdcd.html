@@ -1,0 +1,59 @@
+        for i in range(len(obj_cntp)):
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==1:
+                soma_conta_paga_jan = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_jan
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==2:
+                soma_conta_paga_fev = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_fev
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==3:
+                soma_conta_paga_mar = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_mar
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==4:
+                soma_conta_paga_abr = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_abr
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==5:
+                soma_conta_paga_mai = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_mai
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==6:
+                soma_conta_paga_jun = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_jun
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==7:
+                soma_conta_paga_jul = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_jul
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==8:
+                soma_conta_paga_ago = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_ago
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==9:
+                soma_conta_paga_set = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_set
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==10:
+                soma_conta_paga_out = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_out
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==11:
+                soma_conta_paga_nov = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value + soma_conta_paga
+                soma_conta_paga =soma_conta_paga_nov
+
+            if Contas_a_Pagar_Pagas.objects.get(pk=i).date_payment.month==12:
+                soma_conta_paga_dez = Contas_a_Pagar_Pagas.objects.get(pk=i).conta.value+soma_conta_paga
+                soma_conta_paga =soma_conta_paga_dez
+
+
+    return render(request,'index.html',{'funcionario':len(obj_func), 'profissionais':len(obj_prof),
+        'cliente':len(obj_clie), 'marcas':len(obj_marc),'fornecedor':len(obj_forn),'produto':len(obj_prod),
+        'contas_a_pagar':len(obj_cnta),'contas_pagas':len(obj_cntp), 
+        'contas_pagar_pagas_jan':soma_conta_paga_jan,'contas_pagar_pagas_fev':soma_conta_paga_fev,'contas_pagar_pagas_mar':soma_conta_paga_mar,
+                                        'contas_pagar_pagas_abr': soma_conta_paga_abr,'contas_pagar_pagas_mai':soma_conta_paga_mai,
+                                        'contas_pagar_pagas_jun': soma_conta_paga_jun,'contas_pagar_pagas_jul':soma_conta_paga_jul,
+                                        'contas_pagar_pagas_ago': soma_conta_paga_ago,'contas_pagar_pagas_set':soma_conta_paga_set,
+                                        'contas_pagar_pagas_out': soma_conta_paga_out,'contas_pagar_pagas_nov':soma_conta_paga_nov,
+                                        'contas_pagar_pagas_dez': soma_conta_paga_dez,})
