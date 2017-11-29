@@ -23,7 +23,7 @@ class Dente(models.Model):
         self.user = value
 
     def __unicode__(self):
-        return self.number_tooth
+        return self.number_tooth.__str__()
 
     class Meta:
         verbose_name_plural = 'Dentes e seus numerações'
