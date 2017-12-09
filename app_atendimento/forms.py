@@ -25,6 +25,7 @@ class FormEscala(forms.ModelForm):
 class FormAgendaOdonto(forms.ModelForm):
     client = forms.ModelChoiceField(label="Cliente", queryset=Contrato_Odontologico.objects.all(),widget=forms.Select(attrs={'class': 'form-control'}))
     day_of_service = forms.ModelChoiceField(label="Dias de Serviço",queryset=Escala.objects.all(),widget=forms.Select(attrs={'class': 'form-control'}))
+    date_to_service = forms.DateField(label="Data para o atendimento", widget=forms.DateInput(attrs={"type":"date"}))
     hour_to_service = forms.TimeField(widget=forms.TimeInput(attrs={'type':'time','class':"form-control"}))
 
     class Meta:

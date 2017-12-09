@@ -20,6 +20,8 @@ urlpatterns = [
     url(r'^Cadastra_contas_a_pagar_pagas/', InsereContasAPagarPagas),
     #------------ urls da app_base a cima ----------------#
     url(r'^dashboard2/',apresenta_atendimento),
+    url(r'^dashboard3/',apresenta_atendimento_Nutri),
+    url(r'^dashboard4/',apresenta_atendimento_Psico),
     url(r'^Cadastra_dias/',InsereDias),
     url(r'^Cadastra_escala/',InsereEscala),
     url(r'^Cadastra_agenda_odonto/',InsereAgendaOdonto),

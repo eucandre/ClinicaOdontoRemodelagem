@@ -61,8 +61,9 @@ class Escala(models.Model):
 class Agenda_Odonto(models.Model):
     """Classe que registra o futuro atendimento para o usuário relacionado a determinado profissional 
     com sua especialidade."""
-    client= models.ForeignKey(Contrato_Odontologico)
+    client = models.ForeignKey(Contrato_Odontologico)
     day_of_service = models.ForeignKey(Escala)
+    date_to_service = models.DateField()
     hour_to_service = models.TimeField()
     user = models.ForeignKey(User)
 

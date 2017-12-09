@@ -1,0 +1,1 @@
+{% for i in  agenda_odonto.day_of_service.days_of_service.values  %}
